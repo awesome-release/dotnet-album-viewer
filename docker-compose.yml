@@ -1,4 +1,4 @@
-version: '3.2'
+version: "3.2"
 
 services:
   db:
@@ -10,12 +10,12 @@ services:
     image: dockersamples/dotnet-album-viewer
     build:
       context: .
-      dockerfile: docker/app/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     environment:
       - "Data:Provider=MySQL"
-      - "Data:ConnectionString=Server=db;Port=4000;Database=AlbumViewer;User=root;SslMode=None"      
+      - "Data:ConnectionString=Server=db;Port=4000;Database=AlbumViewer;User=root;SslMode=None"
     depends_on:
       - db
 
